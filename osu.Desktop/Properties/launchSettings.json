@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "neko! Desktop": {
+      "commandName": "Project"
+    },
+    "neko! Tournament": {
+      "commandName": "Project",
+      "commandLineArgs": "--tournament"
+    }
+  }
+}

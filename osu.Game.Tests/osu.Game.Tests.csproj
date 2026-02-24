@@ -8,6 +8,7 @@
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
     <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="ppy.osu.Framework" Version="2026.209.0" /> <!-- vscode bruh -->
   </ItemGroup>
   <PropertyGroup Label="Project">
     <OutputType>WinExe</OutputType>

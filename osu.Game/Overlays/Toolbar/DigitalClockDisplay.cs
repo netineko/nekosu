@@ -69,7 +69,7 @@ namespace osu.Game.Overlays.Toolbar
                 runningText = new FillFlowContainer
                 {
                     Y = 14,
-                    Colour = colours.PinkLight,
+                    Colour = colours.BlueLight,
                     AutoSizeAxes = Axes.Both,
                     Direction = FillDirection.Horizontal,
                     Spacing = new Vector2(2, 0),

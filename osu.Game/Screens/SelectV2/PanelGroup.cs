@@ -30,7 +30,7 @@ namespace osu.Game.Screens.SelectV2
 
         private Drawable iconContainer = null!;
         private OsuSpriteText titleText = null!;
-        private TrianglesV2 triangles = null!;
+        private Bubbles bubbles = null!;
         private CircularContainer countPill = null!;
         private OsuSpriteText countText = null!;
         private Box glow = null!;
@@ -72,11 +72,10 @@ namespace osu.Game.Screens.SelectV2
                     RelativeSizeAxes = Axes.Both,
                     Colour = colourProvider.Background5,
                 },
-                triangles = new TrianglesV2
+                bubbles = new Bubbles
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Thickness = 0.02f,
-                    SpawnRatio = 0.6f,
+                    SpawnRatio = 0.2f,
                     Colour = ColourInfo.GradientHorizontal(colourProvider.Background6, colourProvider.Background5)
                 },
                 glow = new Box
@@ -137,7 +136,7 @@ namespace osu.Game.Screens.SelectV2
                 ? ColourInfo.GradientHorizontal(colourProvider.Highlight1.Opacity(0.25f), colourProvider.Highlight1.Opacity(0f))
                 : ColourInfo.GradientHorizontal(colourProvider.Background6, colourProvider.Background5);
 
-            triangles.FadeColour(colour, duration, Easing.OutQuint);
+            bubbles.FadeColour(colour, duration, Easing.OutQuint);
             glow.FadeTo(Expanded.Value ? 0.4f : 0, duration, Easing.OutQuint);
         }
 

@@ -27,7 +27,7 @@ namespace osu.Game.Graphics.UserInterface
 
         protected Container MainContents;
 
-        private readonly TrianglesV2 triangles;
+        private readonly Bubbles bubbles;
 
         private readonly Container? trianglesMasking;
 
@@ -66,16 +66,16 @@ namespace osu.Game.Graphics.UserInterface
                             RelativeSizeAxes = Axes.Both,
                             Alpha = 0.7f,
                         },
-                        triangles = new TrianglesV2
+                        bubbles = new Bubbles
                         {
                             RelativeSizeAxes = Axes.Both,
                             Colour = inverted ? Color4.White : Color4.Black,
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
-                            Alpha = 0.2f,
-                            ScaleAdjust = 0.4f,
+                            Alpha = 0.3f,
+                            CircleScale = 0.4f,
                             Velocity = 0.8f,
-                            SpawnRatio = 2
+                            SpawnRatio = 0.1f
                         },
                         spinner = new SpriteIcon
                         {
@@ -115,12 +115,12 @@ namespace osu.Game.Graphics.UserInterface
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
                         RelativeSizeAxes = Axes.Both,
-                        Size = new Vector2(0.8f),
+                        Size = new Vector2(0.83f),
                         Masking = true,
-                        CornerRadius = 20,
+                        CornerRadius = Width / 2,
                         Children = new Drawable[]
                         {
-                            triangles = new TrianglesV2
+                            bubbles = new Bubbles
                             {
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
@@ -129,8 +129,8 @@ namespace osu.Game.Graphics.UserInterface
                                     inverted ? Color4.Black.Opacity(0) : Color4.White.Opacity(0),
                                     inverted ? Color4.Black : Color4.White),
                                 RelativeSizeAxes = Axes.Both,
-                                ScaleAdjust = 0.4f,
-                                SpawnRatio = 4,
+                                CircleScale = 0.4f,
+                                SpawnRatio = 0.2f,
                             },
                         }
                     },
@@ -152,7 +152,7 @@ namespace osu.Game.Graphics.UserInterface
             if (withBox)
             {
                 MainContents.CornerRadius = MainContents.DrawWidth / 4;
-                triangles.Rotation = -MainContents.Rotation;
+                bubbles.Rotation = -MainContents.Rotation;
             }
             else
             {

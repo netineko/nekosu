@@ -57,7 +57,7 @@ namespace osu.Game.Screens.Select.Carousel
         private Action<BeatmapInfo>? selectRequested;
         private Action<BeatmapInfo>? hideRequested;
 
-        private Triangles triangles = null!;
+        private Bubbles bubbles = null!;
 
         private StarCounter starCounter = null!;
         private DifficultyIcon difficultyIcon = null!;
@@ -120,12 +120,10 @@ namespace osu.Game.Screens.Select.Carousel
                 {
                     RelativeSizeAxes = Axes.Both,
                 },
-                triangles = new Triangles
+                bubbles = new Bubbles
                 {
-                    TriangleScale = 2,
+                    CircleScale = 2,
                     RelativeSizeAxes = Axes.Both,
-                    ColourLight = Color4Extensions.FromHex(@"3a7285"),
-                    ColourDark = Color4Extensions.FromHex(@"123744")
                 },
                 new FillFlowContainer
                 {
@@ -214,7 +212,7 @@ namespace osu.Game.Screens.Select.Carousel
                 new Color4(20, 43, 51, 255),
                 new Color4(40, 86, 102, 255));
 
-            triangles.Colour = Color4.White;
+            bubbles.Colour = Color4Extensions.FromHex(@"3a7285");
         }
 
         protected override void Deselected()
@@ -224,7 +222,7 @@ namespace osu.Game.Screens.Select.Carousel
             MovementContainer.MoveToX(0, 500, Easing.OutExpo);
 
             background.Colour = new Color4(20, 43, 51, 255);
-            triangles.Colour = OsuColour.Gray(0.5f);
+            bubbles.Colour = Color4Extensions.FromHex(@"123744");
         }
 
         protected override bool OnClick(ClickEvent e)

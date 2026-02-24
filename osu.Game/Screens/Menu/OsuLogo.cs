@@ -62,7 +62,7 @@ namespace osu.Game.Screens.Menu
         protected Sample SampleDownbeat;
 
         private readonly Container colourAndTriangles;
-        private readonly Circles circles;
+        private readonly Bubbles bubbles;
 
         /// <summary>
         /// Return value decides whether the logo should play its own sample for the click action.
@@ -190,19 +190,14 @@ namespace osu.Game.Screens.Menu
                                                                             RelativeSizeAxes = Axes.Both,
                                                                             Colour = ColourInfo.GradientVertical(Color4Extensions.FromHex(@"#99EEFF"), Color4Extensions.FromHex(@"#44AADD")),
                                                                         },
-                                                                        circles = new Circles
+                                                                        bubbles = new Bubbles
                                                                         {
                                                                             Anchor = Anchor.Centre,
                                                                             Origin = Anchor.Centre,
-                                                                            Outline = false,
-                                                                            CircleScale = 3,
-                                                                            Frequency = 4,
-                                                                            CompressScale = false,
-                                                                            Alpha = 0.7f,
-                                                                            Colour = ColourInfo.GradientVertical(Color4Extensions.FromHex(@"#DDFFFF"), Color4Extensions.FromHex(@"#66CCFF")),
-                                                                            ColourLight = Color4Extensions.FromHex(@"#fff"),
-                                                                            ColourDark = Color4Extensions.FromHex(@"#fff"),
                                                                             RelativeSizeAxes = Axes.Both,
+                                                                            CircleScale = 3,
+                                                                            CompressScale = false,
+                                                                            Colour = ColourInfo.GradientVertical(Color4Extensions.FromHex(@"#DDFFFF"), Color4Extensions.FromHex(@"#66CCFF")),
                                                                         },
                                                                     }
                                                                 },
@@ -347,7 +342,7 @@ namespace osu.Game.Screens.Menu
 
             this.Delay(early_activation).Schedule(() =>
             {
-                circles.Velocity += amplitudeAdjust * (effectPoint.KiaiMode ? 4 : 2);
+                bubbles.Velocity += amplitudeAdjust * (effectPoint.KiaiMode ? 4 : 2);
             });
         }
 
@@ -376,11 +371,11 @@ namespace osu.Game.Screens.Menu
                 float maxAmplitude = lastBeatIndex >= 0 ? musicController.CurrentTrack.CurrentAmplitudes.Maximum : 0;
                 logoAmplitudeContainer.Scale = new Vector2((float)Interpolation.Damp(logoAmplitudeContainer.Scale.X, 1 - Math.Max(0, maxAmplitude - scale_adjust_cutoff) * 0.04f, 0.9f, Time.Elapsed));
 
-                circles.Velocity = (float)Interpolation.Damp(circles.Velocity, triangles_paused_velocity * (IsKiaiTime ? 4 : 2), 0.995f, Time.Elapsed);
+                bubbles.Velocity = (float)Interpolation.Damp(bubbles.Velocity, triangles_paused_velocity * (IsKiaiTime ? 4 : 2), 0.995f, Time.Elapsed);
             }
             else
             {
-                circles.Velocity = (float)Interpolation.Damp(circles.Velocity, triangles_paused_velocity, 0.9f, Time.Elapsed);
+                bubbles.Velocity = (float)Interpolation.Damp(bubbles.Velocity, triangles_paused_velocity, 0.9f, Time.Elapsed);
             }
         }
 

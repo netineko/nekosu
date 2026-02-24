@@ -43,10 +43,11 @@ namespace osu.Game.Screens.OnlinePlay.Matchmaking.Match.BeatmapSelect
                             RelativeSizeAxes = Axes.Both,
                             Colour = colourProvider.Dark5,
                         },
-                        new TrianglesV2
+                        new Bubbles
                         {
                             RelativeSizeAxes = Axes.Both,
                             Alpha = 0.1f,
+                            Colour = colourProvider.Colour0
                         },
                         Label = new OsuSpriteText
                         {

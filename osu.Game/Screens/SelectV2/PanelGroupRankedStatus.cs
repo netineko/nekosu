@@ -37,7 +37,7 @@ namespace osu.Game.Screens.SelectV2
         private OsuSpriteText starRatingText = null!;
         private CircularContainer countPill = null!;
         private OsuSpriteText countText = null!;
-        private TrianglesV2 triangles = null!;
+        private Bubbles bubbles = null!;
         private Box glow = null!;
 
         [Resolved]
@@ -75,11 +75,10 @@ namespace osu.Game.Screens.SelectV2
                 {
                     RelativeSizeAxes = Axes.Both,
                 },
-                triangles = new TrianglesV2
+                bubbles = new Bubbles
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Thickness = 0.02f,
-                    SpawnRatio = 0.6f,
+                    SpawnRatio = 0.2f,
                     Colour = ColourInfo.GradientHorizontal(colourProvider.Background6, colourProvider.Background5)
                 },
                 glow = new Box
@@ -174,7 +173,7 @@ namespace osu.Game.Screens.SelectV2
 
             ColourInfo colour = ColourInfo.GradientHorizontal(statusColour.Darken(0.6f), statusColour.Darken(0.8f));
 
-            triangles.Colour = colour;
+            bubbles.Colour = colour;
 
             countText.Text = Item.NestedItemCount.ToLocalisableString(@"N0");
 

@@ -48,11 +48,6 @@ namespace osu.Game.Graphics.Backgrounds
         /// </summary>
         public bool CompressScale = true;
 
-        /// <summary>
-        /// Higher number = Less circles
-        /// </summary>
-        public int Frequency = 1;
-
         private Color4 colourDark = Color4.Black;
 
         public Color4 ColourDark
@@ -75,7 +70,7 @@ namespace osu.Game.Graphics.Backgrounds
         /// <summary>
         /// The amount of circles we want compared to the default distribution.
         /// </summary>
-        protected virtual float SpawnRatio => 1;
+        public float SpawnRatio = 1;
 
         private readonly BindableFloat circleScale = new BindableFloat(1f);
 
@@ -170,7 +165,7 @@ namespace osu.Game.Graphics.Backgrounds
             // Limited by the maximum size of QuadVertexBuffer for safety.
             const int max_circles = ushort.MaxValue / (IRenderer.VERTICES_PER_QUAD + 2);
 
-            AimCount = (int)Math.Min(max_circles, DrawWidth * DrawHeight * 0.002f / (CircleScale * CircleScale) * SpawnRatio) / (Frequency == 0 ? 1 : Frequency);
+            AimCount = (int)Math.Min(max_circles, DrawWidth * DrawHeight * 0.002f / (CircleScale * CircleScale) * SpawnRatio);
 
             int currentCount = Count;
 

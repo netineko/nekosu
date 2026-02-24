@@ -48,6 +48,8 @@ namespace osu.Game.Graphics.UserInterface
         protected readonly Container ColourContainer;
 
         private readonly Container backgroundContainer;
+        private readonly Box buttonBox;
+        private readonly Bubbles bubbles;
         private readonly Container glowContainer;
         private readonly Box leftGlow;
         private readonly Box centerGlow;
@@ -128,11 +130,11 @@ namespace osu.Game.Graphics.UserInterface
                                 Colour = Color4.Black.Opacity(0.2f),
                                 Radius = 5,
                             },
-                            Colour = ButtonColour,
+                            Colour = Color4.White,
                             Shear = OsuGame.SHEAR,
                             Children = new Drawable[]
                             {
-                                new Box
+                                buttonBox = new Box
                                 {
                                     EdgeSmoothness = new Vector2(2, 0),
                                     RelativeSizeAxes = Axes.Both,
@@ -144,13 +146,12 @@ namespace osu.Game.Graphics.UserInterface
                                     MaskingSmoothness = 0,
                                     Children = new[]
                                     {
-                                        new Triangles
+                                        bubbles = new Bubbles
                                         {
                                             RelativeSizeAxes = Axes.Both,
-                                            TriangleScale = 4,
-                                            ColourDark = OsuColour.Gray(0.88f),
+                                            CircleScale = 4,
+                                            SpawnRatio = 1,
                                             Shear = -OsuGame.SHEAR,
-                                            ClampAxes = Axes.Y
                                         },
                                     },
                                 },
@@ -184,7 +185,8 @@ namespace osu.Game.Graphics.UserInterface
             {
                 buttonColour = value;
                 updateGlow();
-                ColourContainer.Colour = value;
+                buttonBox.Colour = value;
+                bubbles.Colour = value.Lighten(0.2f);
             }
         }
 

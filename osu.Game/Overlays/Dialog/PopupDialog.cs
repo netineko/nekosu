@@ -146,12 +146,11 @@ namespace osu.Game.Overlays.Dialog
                                     RelativeSizeAxes = Axes.Both,
                                     Colour = Color4Extensions.FromHex(@"221a21"),
                                 },
-                                new Triangles
+                                new Bubbles
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    ColourLight = Color4Extensions.FromHex(@"271e26"),
-                                    ColourDark = Color4Extensions.FromHex(@"1e171e"),
-                                    TriangleScale = 4,
+                                    Colour = Color4Extensions.FromHex(@"271e26"),
+                                    CircleScale = 4,
                                 },
                                 flashLayer = new Box
                                 {

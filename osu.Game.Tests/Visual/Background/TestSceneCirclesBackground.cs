@@ -46,7 +46,7 @@ namespace osu.Game.Tests.Visual.Background
             AddToggleStep("depth shading", (value) => { circles.ProgressiveShading = value; circles.Reset(seed); });
             AddToggleStep("scaling", (value) => { circles.HasScaling = value; circles.Reset(seed); } );
             AddToggleStep("outlines", (value) => { circles.Outline = value; circles.Reset(seed); });
-            AddSliderStep("frequency", 1, 100, 1, s => { circles.Frequency = s; circles.Reset(seed); });
+            AddSliderStep("spawn ratio", 0f, 1f, 1f, s => { circles.SpawnRatio = s; circles.Reset(seed); });
             AddSliderStep("velocity", 1, 100, 1, s => circles.Velocity = s);
 
             AddStep("reset", () => circles.Reset(seed));

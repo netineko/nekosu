@@ -48,7 +48,7 @@ namespace osu.Game.Screens.SelectV2
         private Box backgroundBorder = null!;
         private Box backgroundDifficultyTint = null!;
 
-        private TrianglesV2 triangles = null!;
+        private Bubbles bubbles = null!;
 
         [Resolved]
         private IRulesetStore rulesets { get; set; } = null!;
@@ -100,10 +100,9 @@ namespace osu.Game.Screens.SelectV2
                 {
                     RelativeSizeAxes = Axes.Both,
                 },
-                triangles = new TrianglesV2
+                bubbles = new Bubbles
                 {
-                    ScaleAdjust = 1.2f,
-                    Thickness = 0.01f,
+                    CircleScale = 1.2f,
                     Velocity = 0.3f,
                     RelativeSizeAxes = Axes.Both,
                 },
@@ -272,7 +271,7 @@ namespace osu.Game.Screens.SelectV2
                 backgroundBorder.Colour = diffColour;
                 backgroundDifficultyTint.Colour = ColourInfo.GradientHorizontal(diffColour.Opacity(0.25f), diffColour.Opacity(0f));
 
-                triangles.Colour = ColourInfo.GradientVertical(diffColour.Opacity(0.25f), diffColour.Opacity(0f));
+                bubbles.Colour = ColourInfo.GradientVertical(diffColour.Opacity(0.25f), diffColour.Opacity(0f));
             }
 
             if (difficultyIcon.Colour != starRatingDisplay.DisplayedDifficultyTextColour)

@@ -260,11 +260,11 @@ namespace osu.Game.Overlays.Toolbar
                     RelativeSizeAxes = Axes.Both,
                     Colour = OsuColour.Gray(30)
                 },
-                new Triangles
+                new Bubbles
                 {
                     RelativeSizeAxes = Axes.Both,
-                    ColourLight = OsuColour.Gray(40),
-                    ColourDark = OsuColour.Gray(20),
+                    SpawnRatio = 2,
+                    Colour = OsuColour.Gray(50),
                 },
             };
         }

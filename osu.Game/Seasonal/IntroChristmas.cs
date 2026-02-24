@@ -136,7 +136,7 @@ namespace osu.Game.Seasonal
                     triangles = new CircularContainer
                     {
                         Alpha = 0,
-                        Masking = true,
+                        //Masking = true,
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
                         Size = new Vector2(960),
@@ -165,7 +165,7 @@ namespace osu.Game.Seasonal
                         welcomeText.FadeIn().OnComplete(t => t.Text = "");
 
                     using (BeginDelayedSequence(getTimeForBeat(-14)))
-                        welcomeText.FadeIn().OnComplete(t => t.Text = "welcome to osu!");
+                        welcomeText.FadeIn().OnComplete(t => t.Text = "welcome to neko!");
 
                     using (BeginDelayedSequence(getTimeForBeat(-13)))
                         welcomeText.FadeIn().OnComplete(t => t.Text = "");
@@ -305,7 +305,7 @@ namespace osu.Game.Seasonal
 
                         Color4 christmasColour = RNG.NextBool() ? SeasonalUIConfig.PRIMARY_COLOUR_1 : SeasonalUIConfig.PRIMARY_COLOUR_2;
 
-                        Drawable triangle = new Triangle
+                        Drawable triangle = new Circle
                         {
                             Size = new Vector2(RNG.NextSingle() + 1.2f) * 80,
                             Origin = Anchor.Centre,

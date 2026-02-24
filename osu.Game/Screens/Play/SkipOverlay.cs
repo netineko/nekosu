@@ -358,10 +358,12 @@ namespace osu.Game.Screens.Play
                                 RelativeSizeAxes = Axes.Both,
                                 Colour = colourNormal,
                             },
-                            new TrianglesV2
+                            new Bubbles
                             {
                                 RelativeSizeAxes = Axes.Both,
-                                Colour = ColourInfo.GradientVertical(colourNormal.Lighten(0.2f), colourNormal)
+                                Colour = colours.Orange0,
+                                CircleScale = 0.5f,
+                                SpawnRatio = 0.2f,
                             },
                             flow = new FillFlowContainer
                             {

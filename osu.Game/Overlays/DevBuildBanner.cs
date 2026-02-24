@@ -14,6 +14,7 @@ namespace osu.Game.Overlays
 {
     public partial class DevBuildBanner : VisibilityContainer
     {
+        private OsuSpriteText spriteText;
         [BackgroundDependencyLoader]
         private void load(OsuColour colours, TextureStore textures, OsuGameBase game)
         {
@@ -26,11 +27,11 @@ namespace osu.Game.Overlays
 
             AddRange(new Drawable[]
             {
-                new OsuSpriteText
+                spriteText = new OsuSpriteText
                 {
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
-                    Font = OsuFont.Numeric.With(weight: FontWeight.Bold, size: 12),
+                    Font = OsuFont.TorusAlternate.With(weight: FontWeight.Bold, size: 20),
                     Colour = colours.YellowDark,
                     Text = @"DEVELOPER BUILD",
                 },
@@ -43,6 +44,8 @@ namespace osu.Game.Overlays
                     Y = 2,
                 },
             });
+
+            spriteText.TransformSpacingTo(new Vector2(4f, 0), 0, Easing.OutQuint);
         }
 
         protected override void PopIn()

@@ -39,12 +39,14 @@ namespace osu.Game.Online.Leaderboards
                             RelativeSizeAxes = Axes.Both,
                             Colour = rankColour,
                         },
-                        new Triangles
+                        new Bubbles
                         {
                             RelativeSizeAxes = Axes.Both,
-                            ColourDark = rankColour.Darken(0.1f),
-                            ColourLight = rankColour.Lighten(0.1f),
+                            Colour = rankColour.Lighten(0.3f),
                             Velocity = 0.25f,
+                            Alpha = 0.5f,
+                            SpawnRatio = 0.3f,
+                            CircleScale = 0.6f,
                         },
                         new OsuSpriteText
                         {

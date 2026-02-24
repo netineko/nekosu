@@ -129,7 +129,7 @@ namespace osu.Game.Overlays.Toolbar
                 {
                     new Circle
                     {
-                        Colour = colours.PinkLight,
+                        Colour = colours.BlueLight,
                         RelativeSizeAxes = Axes.Both,
                     },
                 };

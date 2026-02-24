@@ -48,7 +48,7 @@ namespace osu.Game.Screens.Utility
             SpriteText.Colour = overlayColourProvider.Background6;
             SpriteText.Font = OsuFont.TorusAlternate.With(size: 34);
 
-            Triangles?.Hide();
+            Bubbles?.Hide();
         }
     }
 }

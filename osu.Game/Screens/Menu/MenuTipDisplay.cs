@@ -92,7 +92,7 @@ namespace osu.Game.Screens.Menu
             void formatSemiBold(SpriteText t)
             {
                 t.Font = OsuFont.GetFont(Typeface.TorusAlternate, 16, weight: FontWeight.SemiBold);
-                t.Colour = colours.Pink0;
+                t.Colour = colours.Blue0;
             }
 
             var tip = getRandomTip();
@@ -100,7 +100,7 @@ namespace osu.Game.Screens.Menu
             textFlow.Clear();
             textFlow.AddIcon(FontAwesome.Solid.Lightbulb, icon =>
             {
-                icon.Colour = colours.Pink0;
+                icon.Colour = colours.Blue0;
                 icon.Size = new Vector2(16);
             });
             textFlow.AddText(" ");

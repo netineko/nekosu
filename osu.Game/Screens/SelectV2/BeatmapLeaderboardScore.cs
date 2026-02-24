@@ -369,15 +369,14 @@ namespace osu.Game.Screens.SelectV2
                                     Origin = Anchor.TopRight,
                                     Colour = OsuColour.ForRank(Score.Rank),
                                 },
-                                new TrianglesV2
+                                new Bubbles
                                 {
                                     Shear = sheared ? -OsuGame.SHEAR : Vector2.Zero,
                                     RelativeSizeAxes = Axes.Both,
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
-                                    SpawnRatio = 2,
                                     Velocity = 0.7f,
-                                    Colour = ColourInfo.GradientHorizontal(backgroundColour.Opacity(0), OsuColour.ForRank(Score.Rank).Darken(0.2f)),
+                                    Colour = ColourInfo.GradientHorizontal(backgroundColour.Opacity(0), OsuColour.ForRank(Score.Rank).Lighten(1f)),
                                 },
                                 new Container
                                 {

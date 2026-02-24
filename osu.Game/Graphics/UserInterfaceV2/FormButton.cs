@@ -181,7 +181,7 @@ namespace osu.Game.Graphics.UserInterfaceV2
 
         public partial class Button : OsuButton
         {
-            private TrianglesV2? triangles { get; set; }
+            private Bubbles? bubbles { get; set; }
 
             protected override float HoverLayerFinalAlpha => 0;
 
@@ -225,10 +225,9 @@ namespace osu.Game.Graphics.UserInterfaceV2
 
                 Content.CornerRadius = 4;
 
-                Add(triangles = new TrianglesV2
+                Add(bubbles = new Bubbles
                 {
-                    Thickness = 0.02f,
-                    SpawnRatio = 0.6f,
+                    SpawnRatio = 0.2f,
                     RelativeSizeAxes = Axes.Both,
                     Depth = float.MaxValue,
                 });
@@ -238,12 +237,12 @@ namespace osu.Game.Graphics.UserInterfaceV2
 
             private void updateColours()
             {
-                if (triangles == null)
+                if (bubbles == null)
                     return;
 
                 Debug.Assert(triangleGradientSecondColour != null);
 
-                triangles.Colour = ColourInfo.GradientVertical(triangleGradientSecondColour.Value, BackgroundColour);
+                bubbles.Colour = ColourInfo.GradientVertical(triangleGradientSecondColour.Value, BackgroundColour);
             }
 
             protected override bool OnHover(HoverEvent e)
